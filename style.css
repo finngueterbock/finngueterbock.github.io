@@ -2,15 +2,14 @@
 
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    background: linear-gradient(45deg, #3c1053 40%, #b4aee8 40%, #b4aee8 60%, #3c1053 60%, #3c1053);
-    background-size: 10px 10px;
-    color: #fff;
+    background-color: #f7f7f7;
+    color: #3c3c3c;
     margin: 0;
     padding: 0;
   }
   
   a {
-    color: #fff;
+    color: #6e47c9;
     text-decoration: none;
   }
   
@@ -21,7 +20,8 @@ body {
   /* Header */
   
   header {
-    background-color: #6e47c9;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
   }
@@ -29,12 +29,14 @@ body {
   h1 {
     margin: 0;
     font-size: 48px;
+    color: #6e47c9;
   }
   
   /* Navigation */
   
   nav {
-    background-color: #4d328c;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -54,6 +56,7 @@ body {
   nav a {
     font-size: 18px;
     font-weight: bold;
+    color: #6e47c9;
   }
   
   /* Main Content */
@@ -65,32 +68,9 @@ body {
   
   section {
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     padding: 40px;
-  }
-  
-  article::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 40%, #b4aee8 40%, #b4aee8 60%, transparent 60%, transparent);
-    background-size: 10px 10px;
-    animation: flowing-lines 20s linear infinite;
-  }
-  
-  @keyframes flowing-lines {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 10px 10px;
-    }
   }
   
   article h3 {
@@ -118,3 +98,26 @@ body {
     margin: 0;
   }
   
+  /* Neumorphism styles */
+  
+  .card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    background-color: #6e47c9;
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px #e5e5e5, 
+                -5px -5px 10px #ffffff;
+  }
+  
+  .button:hover {
+    background-color: #4b2e82;
+  }
