@@ -1,153 +1,120 @@
-/* Global Styles */
+/* Global styles */
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #111;
-  color: #fff;
-}
-
-/* Header Styles */
-
-header {
-  background-color: #222;
-  padding: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: #b4aee8;
-}
-
-p {
-  margin: 0;
-}
-
-nav {
-  text-align: right;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-nav li:first-child {
-  margin-left: 0;
-}
-
-nav a {
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-
-nav a:hover {
-  background-color: #b4aee8;
-  color: #111;
-}
-
-/* Main Styles */
-
-main {
-  padding: 50px;
-}
-
-section {
-  margin-bottom: 50px;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #b4aee8;
-}
-
-article {
-  border: 2px solid #b4aee8;
-  padding: 20px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-article::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid #b4aee8;
-  z-index: -1;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #b4aee8;
-}
-
-a {
-  color: #b4aee8;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-a:hover {
-  color: #fff;
-}
-
-/* Footer Styles */
-
-footer {
-  background-color: #222;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Additional Styles */
-
-/* Vector Lines */
-
-article::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, transparent 40%, #b4aee8 40%, #b4aee8 60%, transparent 60%, transparent);
-  background-size: 10px 10px;
-}
-
-/* Purple */
-
-header, nav a:hover, h1, h2, h3, a {
-  color: #b4aee8;
-}
-
-article, article::before {
-  border-color: #b4aee8;
-}
-
-nav a:hover, a:hover {
-  background-color: #b4aee8;
-}
-
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(45deg, #3c1053 40%, #b4aee8 40%, #b4aee8 60%, #3c1053 60%, #3c1053);
+    background-size: 10px 10px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header */
+  
+  header {
+    background-color: #6e47c9;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 48px;
+  }
+  
+  /* Navigation */
+  
+  nav {
+    background-color: #4d328c;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Main Content */
+  
+  main {
+    margin: 40px auto;
+    max-width: 800px;
+  }
+  
+  section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding: 40px;
+  }
+  
+  article::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, #b4aee8 40%, #b4aee8 60%, transparent 60%, transparent);
+    background-size: 10px 10px;
+    animation: flowing-lines 20s linear infinite;
+  }
+  
+  @keyframes flowing-lines {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 10px 10px;
+    }
+  }
+  
+  article h3 {
+    color: #6e47c9;
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+  
+  article p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  /* Footer */
+  
+  footer {
+    background-color: #6e47c9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
