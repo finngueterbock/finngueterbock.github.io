@@ -1,0 +1,153 @@
+/* Global Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Header Styles */
+
+header {
+  background-color: #222;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #b4aee8;
+}
+
+p {
+  margin: 0;
+}
+
+nav {
+  text-align: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #b4aee8;
+  color: #111;
+}
+
+/* Main Styles */
+
+main {
+  padding: 50px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #b4aee8;
+}
+
+article {
+  border: 2px solid #b4aee8;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+article::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid #b4aee8;
+  z-index: -1;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #b4aee8;
+}
+
+a {
+  color: #b4aee8;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: #222;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Additional Styles */
+
+/* Vector Lines */
+
+article::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent 40%, #b4aee8 40%, #b4aee8 60%, transparent 60%, transparent);
+  background-size: 10px 10px;
+}
+
+/* Purple */
+
+header, nav a:hover, h1, h2, h3, a {
+  color: #b4aee8;
+}
+
+article, article::before {
+  border-color: #b4aee8;
+}
+
+nav a:hover, a:hover {
+  background-color: #b4aee8;
+}
+
