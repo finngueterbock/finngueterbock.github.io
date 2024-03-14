@@ -13,11 +13,13 @@ body {
   text-align: center;
 }
 
-.header {
-  padding: 20px 0; /* Adjust the padding as needed */
-  width: 100%;
-  background-color: #333; /* Add a background color for the header */
+header {
+  height: 150px;      /* Increase the height */
+  font-size: 30px;    /* Make the text larger */
+  padding: 30px;      /* Add space around the content */
+  background-color: lightblue; /* Optional: add a background color */
 }
+
 
 .header-title {
   font-size: 32px; /* Increase the font size for the header title */
