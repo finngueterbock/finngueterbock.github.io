@@ -1,97 +1,28 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
-<script src="animations.js"></script>
 <head>
-  <meta charset="UTF-8">
-  <title>c0inman</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-  <style>
-    /* Global styles */
-
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f7f7f7;
-      color: #3c3c3c;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Header */
-
-    header {
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 48px;
-      color: #6e47c9;
-    }
-
-    /* Main Content */
-
-    main {
-      margin: 40px auto;
-      max-width: 800px;
-      position: relative;
-    }
-
-    .image {
-      background-color: #fff;
-      border: 0px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-      height: 300px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .image:hover .overlay {
-      display: block;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      display: none;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      width: 100%;
-    }
-
-    .overlay p {
-      font-size: 24px;
-      margin-top: 100px;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-  <header>
-    <h1>finn gueterbock</h1>
-  </header>
-  <main>
-    <div class="image" style="background-image: url('images/IMG_0106.PNG');">
-    </div>
-    <div class="image" style="background-image: url('images/IMG_0109.PNG');">
-    </div>
-    <div class="image" style="background-image: url('images/IMG_0112.PNG');">
-    </div>
-    <div class="image" style="background-image: url('images/IMG_0113.PNG');">
-    </div>
-    <div class="image" style="background-image: url('images/IMG_0115.PNG');">
-    </div>
-    <div class="my-element">Hello, world!
-    </div>
+    <header>
+        <h1>My Amazing Portfolio</h1>
+    </header>
 
-  </main>
+    <main>
+        <section class="image-gallery">
+            <img src="images/IMG_0106.PNG" alt="Project 1" class="blurred">
+            <img src="images/IMG_0109.PNG" alt="Project 2">
+            </section>
+
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>A passionate designer/developer ... (add your description!)</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script> 
 </body>
 </html>
