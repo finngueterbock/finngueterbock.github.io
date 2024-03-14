@@ -15,6 +15,26 @@ header {
   display: grid; /* Adjust the layout as you like */
 }
 
+/* ... other styles ... */
+
+.image-gallery img {
+  filter: blur(3px);  /* Images are initially blurred */
+  transition: filter 0.5s ease-in-out; /* Add a smooth transition */
+}
+
+.image-gallery img:hover {
+  filter: blur(0px); /* Remove the blur on hover */
+}
+
+
 .blurred { 
   filter: blur(3px);
+}
+
+body {
+  font-family: 'Roboto Mono', monospace; /* Default font for the body */
+}
+
+header, h1, h2 {  /* Apply Pixelify Sans to headers */
+  font-family: 'Pixelify Sans', sans-serif;
 }
