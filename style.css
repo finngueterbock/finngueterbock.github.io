@@ -1,40 +1,39 @@
-
 body {
   font-family: sans-serif;
   margin: 0;
-  padding: 20px;
-  background-color: #f0f0f0; 
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
 }
 
 header {
-  text-align: center;
   margin-bottom: 40px;
 }
 
 .image-gallery {
-  display: grid; /* Adjust the layout as you like */
+  position: relative;
 }
 
-/* ... other styles ... */
-
 .image-gallery img {
-  filter: blur(3px);  /* Images are initially blurred */
-  transition: filter 0.5s ease-in-out; /* Add a smooth transition */
+  filter: blur(3px);
+  transition: filter 0.5s ease-in-out;
 }
 
 .image-gallery img:hover {
-  filter: blur(0px); /* Remove the blur on hover */
+  filter: blur(0px);
 }
 
-
-.blurred { 
+.blurred {
   filter: blur(3px);
 }
 
-body {
-  font-family: 'Roboto Mono', monospace; /* Default font for the body */
-}
-
-header, h1, h2 {  /* Apply Pixelify Sans to headers */
+header, h1, h2 {
   font-family: 'Pixelify Sans', sans-serif;
 }
