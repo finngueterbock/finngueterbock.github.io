@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" width="500" height="100">
+	<title>text</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 27px;fill: #ffe200;font-weight: 400;font-family: "Brizel", "Brizel" } 
+	</style>
+	<text id="it's dark out there, you'll need" style="transform: matrix(1,0,0,1,6,16)" >
+		<tspan x="0" y="17.6" class="t0">i</tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0">'</tspan><tspan  y="17.6" class="t0">s</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">d</tspan><tspan  y="17.6" class="t0">a</tspan><tspan  y="17.6" class="t0">r</tspan><tspan  y="17.6" class="t0">k</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">o</tspan><tspan  y="17.6" class="t0">u</tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0">h</tspan><tspan  y="17.6" class="t0">e</tspan><tspan  y="17.6" class="t0">r</tspan><tspan  y="17.6" class="t0">e</tspan><tspan  y="17.6" class="t0">,</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">y</tspan><tspan  y="17.6" class="t0">o</tspan><tspan  y="17.6" class="t0">u</tspan><tspan  y="17.6" class="t0">'</tspan><tspan  y="17.6" class="t0">l</tspan><tspan  y="17.6" class="t0">l</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">n</tspan><tspan  y="17.6" class="t0">e</tspan><tspan  y="17.6" class="t0">e</tspan><tspan  y="17.6" class="t0">d</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0">o</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">p</tspan><tspan  y="17.6" class="t0">a</tspan><tspan  y="17.6" class="t0">y</tspan><tspan  y="17.6" class="t0"> </tspan><tspan  y="17.6" class="t0">a</tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0">e</tspan><tspan  y="17.6" class="t0">n</tspan><tspan  y="17.6" class="t0">t</tspan><tspan  y="17.6" class="t0">i</tspan><tspan  y="17.6" class="t0">o</tspan><tspan  y="17.6" class="t0">n
+</tspan>
+	</text>
+</svg>
