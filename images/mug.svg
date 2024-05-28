@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 1620" width="2160" height="1620">
+	<title>IMG_0245</title>
+	<defs>
+		<image  width="181" height="172" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALUAAACsBAMAAADPpPDJAAAAAXNSR0IB2cksfwAAAA9QTFRF////GwAAm2ZF9HtO////H7KPzgAAAAV0Uk5TAP////8c0CZSAAAA7ElEQVR4nO3b0Q3CIBDGcdAFdAPjBN1/BxMnMG6gC2irGJGTytH2QQL/74kU8qMvl7Y5as0jdmOmpL/mrbPY2P+2t5PYTy7Y2NivgV6bEacUKDZ2E7aLXqQRl/Cxscuyo4jZ0UcNNjb2wsQ7Y2MXY692wdX7OaW4pSd9E2zs9uyMvO3f99RjY2MnbJ/99yw2dkW22AQbG1uz111w8XbExsbGxsbGxm7edhHfLNjY2N4+mKAAsbHrt58jf7Zqhi0iOijY2NgpO37Xw8Yu1M7zRbdvvKHu+ujY2G3ZSyIPKmJjF2HP9bX/MrCxK7YHNkM/KwDj/poAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="869" y="246"/>
+</svg>
