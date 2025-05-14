@@ -1,9 +1,105 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+/* style.css */
 
-   body {
-    background-color: white;
-    color: black;
-    font-family: Verdana;
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a svg:hover {
+  opacity: 0.8;
+}
+
+/*
+.crisp-edge-svg path,
+.crisp-edge-svg rect,
+.crisp-edge-svg circle {
+  shape-rendering: crispEdges;
+}
+*/
+
+.caption {
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 15px;
+}
+
+body.index-page-bg {
+  background: url("images/paint_bg.jpeg") 0% 0% repeat;
+  background-size: 100%;
+}
+
+body.room-page-bg {
+  background: url("images/room.jpeg") 0% 0%;
+  background-size: 100%;
+}
+
+body.space-page-bg {
+  background-color: black;
+}
+
+body.slip-page-bg {
+  background: url("waterbg.gif") repeat;
+  background-size: 100%;
+}
+
+/* for absolute positioned elements in index.html & room.html,
+ consider moving inline styles here using ids/classes for better control,
+ especially with media queries.
+ using percentages for top/left/width is generally better for responsiveness.
+*/
+
+/*
+#virgil-link {
+  position: absolute; top: 700px; left: 30px;
+}
+#virgil-link img {
+  width: 220px;
+}
+*/
+
+@media screen and (max-width: 768px) {
+  .caption {
+      font-size: 0.9em;
+      margin-top: 15px;
   }
+  /*
+  #virgil-link { top: 80%; left: 5%; }
+  #virgil-link img { width: 180px; }
+  */
+}
+
+@media screen and (max-width: 480px) {
+  .caption {
+      font-size: 0.8em;
+      margin-top: 10px;
+  }
+  /*
+  #virgil-link { top: 85%; left: 2%; }
+  #virgil-link img { width: 150px; }
+  */
+}
+
+
+body.sky-page-bg { /* new class for the sky page */
+  background: url("images/sky.gif") repeat;
+  background-size: 10%; /* this is quite small, might look very tiled. adjust if needed */
+                          /* consider 'auto', 'cover', or a pixel/percentage value that works better */
+  overflow: hidden; /* if images are very large and cause scrollbars unintentionally */
+}

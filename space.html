@@ -2,20 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> {/* Added viewport meta tag */}
         <title>beep boop</title>
-        <style>
-            body {
-                background-color: black;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css"> {/* <-- stylesheet link added */}
     </head>
-    <body>
-        <center>
-            <img src="/images/its_dark.svg">
+    <body class="space-page-bg"> {/* <-- class for specific background from style.css */}
+        <center> {/* Consider replacing <center> with CSS text-align or margin auto for the image */}
+            <img src="/images/its_dark.svg" alt="It's dark in space"> {/* Added alt text */}
         </center>
-        <a href="coin.html" style="position: absolute; top: 790px; left: 350px;">
-            <img src="/images/02coin.gif" width="30">
+        <a href="coin.html" style="position: absolute; top: 790px; left: 350px;"> {/* Keep an eye on this for responsiveness */}
+            <img src="/images/02coin.gif" width="30" alt="Spinning coin"> {/* Added alt text and kept width attribute as it's specific */}
           </a>
     </body>
 </html>
-
