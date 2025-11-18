@@ -1,105 +1,78 @@
 /* style.css */
 
 body {
-  background-color: white;
+  background-color: #1a1a1a; /* Darker bg for better contrast outside the scene */
   color: black;
   font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-img, svg {
-  max-width: 100%;
+/* --- THE SCENE CONTAINER --- 
+   This is the magic sauce. It ensures everything inside 
+   scales perfectly with the background image. 
+*/
+.scene-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Prevents it getting too massive on huge screens */
+  margin: 0 auto;
+  overflow: hidden; /* Keeps things neat */
+}
+
+/* The Background Image itself */
+.scene-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none; /* Let clicks pass through if needed, mostly for dragging prevention */
+}
+
+/* The Buttons (Images on top) */
+.scene-item {
+  position: absolute;
+  display: block;
+  transition: transform 0.1s ease;
+  /* This helps with the "shape" click feel by ignoring clicks on fully transparent outer-outer areas if supported, 
+     but mostly relies on tight sizing. */
+}
+
+.scene-item img {
+  width: 100%;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  /* Drop shadow helps separate items from bg */
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2)); 
 }
 
-a svg:hover {
-  opacity: 0.8;
+.scene-item:hover {
+  transform: scale(1.05); /* Nice little pop effect */
+  cursor: pointer;
+  filter: drop-shadow(0px 8px 8px rgba(0,0,0,0.3)); 
 }
 
-/*
-.crisp-edge-svg path,
-.crisp-edge-svg rect,
-.crisp-edge-svg circle {
-  shape-rendering: crispEdges;
-}
-*/
-
+/* Caption styling */
 .caption {
   text-align: center;
-  margin-top: 20px;
-  padding: 0 15px;
+  color: white;
+  padding: 20px;
+  font-size: 1.2rem;
 }
 
-body.index-page-bg {
-  background: url("images/paint_bg.jpeg") 0% 0% repeat;
-  background-size: 100%;
-}
-
-body.room-page-bg {
-  background: url("images/room.jpeg") 0% 0%;
-  background-size: 100%;
-}
-
-body.space-page-bg {
-  background-color: black;
-}
-
-body.slip-page-bg {
-  background: url("waterbg.gif") repeat;
-  background-size: 100%;
-}
-
-/* for absolute positioned elements in index.html & room.html,
- consider moving inline styles here using ids/classes for better control,
- especially with media queries.
- using percentages for top/left/width is generally better for responsiveness.
-*/
-
-/*
-#virgil-link {
-  position: absolute; top: 700px; left: 30px;
-}
-#virgil-link img {
-  width: 220px;
-}
-*/
-
-@media screen and (max-width: 768px) {
-  .caption {
-      font-size: 0.9em;
-      margin-top: 15px;
-  }
-  /*
-  #virgil-link { top: 80%; left: 5%; }
-  #virgil-link img { width: 180px; }
-  */
-}
-
-@media screen and (max-width: 480px) {
-  .caption {
-      font-size: 0.8em;
-      margin-top: 10px;
-  }
-  /*
-  #virgil-link { top: 85%; left: 2%; }
-  #virgil-link img { width: 150px; }
-  */
-}
-
-
-body.sky-page-bg { /* new class for the sky page */
+/* Specific page overrides */
+body.sky-page-bg {
   background: url("images/sky.gif") repeat;
-  background-size: 10%; /* this is quite small, might look very tiled. adjust if needed */
-                          /* consider 'auto', 'cover', or a pixel/percentage value that works better */
-  overflow: hidden; /* if images are very large and cause scrollbars unintentionally */
+  background-size: 10%; 
 }

@@ -2,27 +2,65 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who are you?</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a href="books.html" style="position: absolute; top: 87%; left: 61%;">
-      <img src="/images/books.svg" width="30%">
-    </a>
-    <a href="croc.html" style="position: absolute; top: 68%; left: 1%;">
-      <img src="/images/croc.png" width="47%">
-    </a>
-    <a href="mug.html" style="position: absolute; top: 76%; left: 60%;">
-      <img src="/images/mug.svg" width="14%">
-    </a>
-    <a href="island.html" style="position: absolute; top: 20%; left: 5%;">
-      <img src="/images/island.svg" width="60%">
-    </a>
-    <a href="jump.html" style="position: absolute; top: 18%; left: 23%;">
-      <img src="/images/jump.svg" width="60%">
-    </a>
-    <a href="oil.html" style="position: absolute; top: 16%; left: 40%;">
-        <img src="/images/oil.svg" width="60%">
+    
+    <!-- 
+      SCENE WRAPPER:
+      Everything stays relative to 'images/room.jpeg'.
+      If the room shrinks, the books shrink and move with it.
+    -->
+    <div class="scene-wrapper">
+      <!-- The Room Background -->
+      <img src="/images/room.jpeg" class="scene-bg" alt="Room Background">
+
+      <!-- 
+        Items:
+        'width' is now a % of the room image width.
+        'top' and 'left' are % of the room image dimensions.
+        I adjusted these slightly to match the new context.
+      -->
+      
+      <!-- Books on the shelf -->
+      <a href="books.html" class="scene-item" style="top: 87%; left: 61%; width: 30%;">
+        <img src="/images/books.svg" alt="Books">
       </a>
+
+      <!-- The Crocodile -->
+      <!-- 
+         To make this click area perfectly crocodile shaped:
+         1. Use an inline <svg> with a <path> tag.
+         2. OR use CSS clip-path: polygon(...coords...);
+         For now, I've kept the image tight.
+      -->
+      <a href="croc.html" class="scene-item" style="top: 68%; left: 1%; width: 47%;">
+        <img src="/images/croc.png" alt="Crocodile">
+      </a>
+
+      <!-- Mug -->
+      <a href="mug.html" class="scene-item" style="top: 76%; left: 60%; width: 14%;">
+        <img src="/images/mug.svg" alt="Mug">
+      </a>
+
+      <!-- Island Painting -->
+      <a href="island.html" class="scene-item" style="top: 20%; left: 5%; width: 60%;">
+        <img src="/images/island.svg" alt="Island">
+      </a>
+
+      <!-- Jump -->
+      <a href="jump.html" class="scene-item" style="top: 18%; left: 23%; width: 60%;">
+        <img src="/images/jump.svg" alt="Jump">
+      </a>
+
+      <!-- Oil -->
+      <a href="oil.html" class="scene-item" style="top: 16%; left: 40%; width: 60%;">
+        <img src="/images/oil.svg" alt="Oil">
+      </a>
+
+    </div>
+
   </body>
 </html>
