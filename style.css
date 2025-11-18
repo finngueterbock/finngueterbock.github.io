@@ -1,7 +1,7 @@
 /* style.css */
 
 body {
-  background-color: #1a1a1a; /* Darker bg for better contrast outside the scene */
+  background-color: #1a1a1a; /* Dark background frame */
   color: black;
   font-family: Verdana, sans-serif;
   margin: 0;
@@ -19,60 +19,68 @@ body {
   box-sizing: inherit;
 }
 
-/* --- THE SCENE CONTAINER --- 
-   This is the magic sauce. It ensures everything inside 
-   scales perfectly with the background image. 
+/* --- THE SCENE WRAPPER --- 
+   This holds the "world". 
+   It ensures the background and buttons resize together.
 */
 .scene-wrapper {
-  position: relative;
+  position: relative; /* Essential for holding the absolute buttons */
   width: 100%;
-  max-width: 1200px; /* Prevents it getting too massive on huge screens */
+  max-width: 1200px; /* Cap the size so it doesn't get huge on desktop */
   margin: 0 auto;
-  overflow: hidden; /* Keeps things neat */
+  line-height: 0; /* Removes weird gaps under images */
 }
 
-/* The Background Image itself */
+/* The Main Background Image */
 .scene-bg {
-  display: block;
   width: 100%;
   height: auto;
-  user-select: none;
-  pointer-events: none; /* Let clicks pass through if needed, mostly for dragging prevention */
-}
-
-/* The Buttons (Images on top) */
-.scene-item {
-  position: absolute;
   display: block;
-  transition: transform 0.1s ease;
-  /* This helps with the "shape" click feel by ignoring clicks on fully transparent outer-outer areas if supported, 
-     but mostly relies on tight sizing. */
+  user-select: none; /* Stop user from highlighting the room */
+  pointer-events: none; /* Let clicks pass through mostly */
 }
 
+/* The Button Links */
+.scene-item {
+  position: absolute; /* PINS the item to the wrapper */
+  display: block;
+  z-index: 10; /* Puts buttons ABOVE the background */
+  transition: transform 0.1s ease;
+}
+
+/* Images inside the buttons */
 .scene-item img {
   width: 100%;
   height: auto;
   display: block;
-  /* Drop shadow helps separate items from bg */
-  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2)); 
+  /* Drop shadow to make them pop off the background */
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.3)); 
 }
 
 .scene-item:hover {
-  transform: scale(1.05); /* Nice little pop effect */
+  transform: scale(1.05);
+  filter: drop-shadow(0px 8px 8px rgba(0,0,0,0.5)); 
   cursor: pointer;
-  filter: drop-shadow(0px 8px 8px rgba(0,0,0,0.3)); 
 }
 
-/* Caption styling */
+/* Caption at the bottom */
 .caption {
   text-align: center;
   color: white;
   padding: 20px;
-  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
-/* Specific page overrides */
+.caption img {
+    max-width: 200px;
+    width: 50%;
+}
+
+/* --- Page Specific Backgrounds (for non-scene pages) --- */
 body.sky-page-bg {
   background: url("images/sky.gif") repeat;
   background-size: 10%; 
+}
+body.space-page-bg {
+  background-color: black;
 }
