@@ -1,7 +1,7 @@
 /* style.css */
 
 body {
-  background-color: #1a1a1a; /* Dark background frame */
+  background-color: white;
   color: black;
   font-family: Verdana, sans-serif;
   margin: 0;
@@ -20,15 +20,15 @@ body {
 }
 
 /* --- THE SCENE WRAPPER --- 
-   This holds the "world". 
-   It ensures the background and buttons resize together.
+   This acts as the relative anchor for all absolute buttons.
+   It ensures the buttons and background scale together perfectly.
 */
 .scene-wrapper {
-  position: relative; /* Essential for holding the absolute buttons */
+  position: relative;
   width: 100%;
-  max-width: 1200px; /* Cap the size so it doesn't get huge on desktop */
+  max-width: 1200px; /* Prevents the site from becoming too large on desktops */
   margin: 0 auto;
-  line-height: 0; /* Removes weird gaps under images */
+  line-height: 0; /* Removes invisible gaps under images */
 }
 
 /* The Main Background Image */
@@ -36,15 +36,15 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  user-select: none; /* Stop user from highlighting the room */
-  pointer-events: none; /* Let clicks pass through mostly */
+  user-select: none;
+  pointer-events: none; /* Prevents dragging/highlighting the background */
 }
 
 /* The Button Links */
 .scene-item {
-  position: absolute; /* PINS the item to the wrapper */
+  position: absolute; /* Pins the item relative to .scene-wrapper */
   display: block;
-  z-index: 10; /* Puts buttons ABOVE the background */
+  z-index: 10; /* Ensures buttons float above the background */
   transition: transform 0.1s ease;
 }
 
@@ -53,20 +53,20 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  /* Drop shadow to make them pop off the background */
+  /* Adds a subtle shadow to separate items from the background */
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.3)); 
 }
 
 .scene-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Pop effect on hover */
   filter: drop-shadow(0px 8px 8px rgba(0,0,0,0.5)); 
   cursor: pointer;
 }
 
-/* Caption at the bottom */
+/* Footer Caption */
 .caption {
   text-align: center;
-  color: white;
+  color: black;
   padding: 20px;
   margin-top: 10px;
 }
@@ -76,7 +76,7 @@ body {
     width: 50%;
 }
 
-/* --- Page Specific Backgrounds (for non-scene pages) --- */
+/* --- Page Specific Backgrounds --- */
 body.sky-page-bg {
   background: url("images/sky.gif") repeat;
   background-size: 10%; 
