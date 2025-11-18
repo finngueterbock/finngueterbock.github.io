@@ -8,67 +8,71 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  min-height: 100vh;
+  height: 100vh; /* Force body to fill screen */
+  width: 100vw; /* Force body to fill screen */
+  overflow: hidden; /* Hide scrollbars since we are fitting to window */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* --- THE SCENE WRAPPER --- 
-   This acts as the relative anchor for all absolute buttons.
-   It ensures the buttons and background scale together perfectly.
-*/
+/* --- THE SCENE WRAPPER --- */
 .scene-wrapper {
   position: relative;
+  /* FORCE FULL SCREEN DIMENSIONS */
   width: 100%;
-  max-width: 1200px; /* Prevents the site from becoming too large on desktops */
-  margin: 0 auto;
-  line-height: 0; /* Removes invisible gaps under images */
+  height: 100%; 
+  max-width: none; /* Remove the width limit */
+  flex-grow: 1; /* Lets it fill available space */
 }
 
 /* The Main Background Image */
 .scene-bg {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   user-select: none;
-  pointer-events: none; /* Prevents dragging/highlighting the background */
+  pointer-events: none;
+  object-fit: fill; /* CRITICAL: This forces the image to stretch/squash to fit */
 }
 
 /* The Button Links */
 .scene-item {
-  position: absolute; /* Pins the item relative to .scene-wrapper */
+  position: absolute;
   display: block;
-  z-index: 10; /* Ensures buttons float above the background */
+  z-index: 10;
   transition: transform 0.1s ease;
 }
 
 /* Images inside the buttons */
 .scene-item img {
   width: 100%;
-  height: auto;
+  height: 100%; /* Force button images to stretch with their container */
   display: block;
-  /* Adds a subtle shadow to separate items from the background */
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.3)); 
 }
 
 .scene-item:hover {
-  transform: scale(1.05); /* Pop effect on hover */
+  transform: scale(1.05);
   filter: drop-shadow(0px 8px 8px rgba(0,0,0,0.5)); 
   cursor: pointer;
 }
 
-/* Footer Caption */
+/* Caption styling */
+/* I moved this to absolute positioning so it sits on top of the stretched background 
+   instead of pushing off-screen */
 .caption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
   text-align: center;
-  color: black;
-  padding: 20px;
-  margin-top: 10px;
+  color: white; /* Changed to white for better visibility overlaying images */
+  z-index: 20;
+  pointer-events: none; /* Let clicks pass through text */
 }
 
 .caption img {
