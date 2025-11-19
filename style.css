@@ -1,15 +1,13 @@
-/* style.css */
-
 body {
-  background-color: black;
+  background-color: white;
   color: black;
   font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  height: 100vh; /* Forces full viewport height */
-  width: 100vw;  /* Forces full viewport width */
+  height: 100vh;
+  width: 100vw;
   overflow: hidden; 
   display: flex;
   flex-direction: column;
@@ -19,7 +17,7 @@ body {
   box-sizing: inherit;
 }
 
-/* --- THE SCENE WRAPPER --- */
+/* --- SCENE WRAPPER --- */
 .scene-wrapper {
   position: relative;
   width: 100%;
@@ -28,30 +26,27 @@ body {
   flex-grow: 1;
 }
 
-/* The Main Background Image */
 .scene-bg {
   width: 100%;
   height: 100%;
   display: block;
   user-select: none;
   pointer-events: none;
-  object-fit: fill; /* CRITICAL: Forces background to stretch/squash */
+  object-fit: fill; 
 }
 
-/* The Button Links */
+/* --- INTERACTIVE ITEMS --- */
 .scene-item {
   position: absolute;
   display: block;
   z-index: 10;
-  /* No transition on transform to keep it snappy during resize */
 }
 
-/* Images inside the buttons */
 .scene-item img {
   width: 100%;
-  height: 100%; /* CRITICAL: Forces image to fill the % box defined in HTML */
+  height: 100%;
   display: block;
-  object-fit: fill; /* CRITICAL: Allows the icon to distort with the box */
+  object-fit: fill;
   filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.3)); 
 }
 
@@ -61,7 +56,7 @@ body {
   cursor: pointer;
 }
 
-/* Caption styling */
+/* --- CAPTION --- */
 .caption {
   position: absolute;
   bottom: 10px;
@@ -78,11 +73,30 @@ body {
     width: 50%;
 }
 
-/* --- Page Specific Backgrounds --- */
+/* --- PAGE SPECIFIC BACKGROUNDS --- */
 body.sky-page-bg {
   background: url("images/sky.gif") repeat;
   background-size: 10%; 
 }
 body.space-page-bg {
   background-color: black;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  z-index: 1000;
+  transition: transform 0.1s;
+}
+.back-btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.back-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
