@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" type="image/png" href="images/coin.png">
   </head>
-  <body class="sky-page-bg">
-<a href="javascript:history.back()" style="position: fixed; top: 10px; left: 10px; z-index: 9999;"><img src="images/back.png" alt="Back" width="50"></a> 
-    <a href="ufo.html" style="position: absolute; top: 50vh; left: 30vh;">
-        <img src="/images/ufo_espin.gif" width="250" alt="Spinning UFO"> 
-      </a>
-      <a href="#" style="position: absolute; top: 90vh; left: 50vh;">
-        <img src="/images/flyingufo.gif" width="650" alt="Flying UFO"> 
+  <body>
+      <a href="javascript:history.back()" class="back-btn">
+        <img src="images/back.png" alt="Back">
       </a>
 
-      <a href="#" style="position: absolute; top: 10vh; left: 3vw;">
-        <img src="/images/look_up.svg" width="1450" alt="Look Up graphic"> 
-      </a>
-      
+      <div class="scene-wrapper">
+          <img src="images/sky.gif" class="scene-bg" alt="Sky Background">
 
-      <a href="#" style="position: absolute; top: 30vh; left: 70vh;">
-        <img src="/images/cest_lhistoire.png" width="650" alt="C'est l'histoire graphic"> 
-      </a>   
+          <a href="ufo.html" class="scene-item" style="top: 50%; left: 20%; width: 15%;">
+            <img src="images/ufo_espin.gif" alt="Spinning UFO">
+          </a>
 
+          <a href="#" class="scene-item" style="top: 85%; left: 40%; width: 30%;">
+            <img src="images/flyingufo.gif" alt="Flying UFO">
+          </a>
+
+          <a href="#" class="scene-item" style="top: 10%; left: 3%; width: 40%;">
+            <img src="images/look_up.svg" alt="Look Up graphic">
+          </a>
+          
+          <a href="#" class="scene-item" style="top: 30%; left: 50%; width: 25%;">
+            <img src="images/cest_lhistoire.png" alt="C'est l'histoire graphic">
+          </a>   
+      </div>
   </body>
 </html>
