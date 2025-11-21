@@ -72,14 +72,14 @@
          style="position: absolute; bottom: 0; left: 10%; width: 45%;">
 
     <img src="images/not_found.png" alt="404 words"
-         style="position: absolute; bottom: 40%; right: 3%; width: 50%;">
+         style="position: absolute; bottom: 40%; right: 3%; width: 70%;">
 
     <div id="moon-phase"></div>
 
 </div>
 
 <script>
-// ---- Accurate Moon Phase Algorithm (Meeus-based) ----
+
 function getMoonPhase() {
     const now = new Date();
 
@@ -112,7 +112,7 @@ function getMoonPhase() {
     else if (pct < 50) phaseName = "first quarter 🌓";
     else if (pct < 75) phaseName = "waxing gibbous 🌔";
     else if (pct < 98) phaseName = "full moon 🌕";
-    else if (pct < 75) phaseName = "waning gibbous 🌖"; // safeguard
+    else if (pct < 75) phaseName = "waning gibbous 🌖"; 
     else if (pct < 50) phaseName = "last quarter 🌗";
     else phaseName = "waning crescent 🌘";
 
