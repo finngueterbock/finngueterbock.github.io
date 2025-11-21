@@ -41,6 +41,8 @@ body {
   position: absolute;
   display: block;
   z-index: 10;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .scene-item img {
