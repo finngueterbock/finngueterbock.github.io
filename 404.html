@@ -32,6 +32,7 @@
         opacity: 0.9;
         font-family: 'Courier New', Courier, monospace;
         text-transform: lowercase;
+
         background: rgba(0, 0, 0, 0.45);
         padding: 10px 20px;
         border-radius: 12px;
@@ -67,44 +68,58 @@
 
     <img src="images/404_bg.png" class="scene-bg" alt="404 Background">
 
-    <img src="images/404.png" alt="404 bloke" style="position: absolute; bottom: 0; left: 10%; width: 45%;">
+    <img src="images/404.png" alt="404 bloke"
+         style="position: absolute; bottom: 0; left: 10%; width: 45%;">
 
-    <img src="images/not_found.png" alt="404 words" style="position: absolute; bottom: 40%; right: 3%; width: 50%;">
+    <img src="images/not_found.png" alt="404 words"
+         style="position: absolute; bottom: 40%; right: 3%; width: 50%;">
 
     <div id="moon-phase"></div>
 
 </div>
 
 <script>
-    function getMoonPhase() {
-        const date = new Date();
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let day = date.getDate();
+// ---- Accurate Moon Phase Algorithm (Meeus-based) ----
+function getMoonPhase() {
+    const now = new Date();
 
-        if (month < 3) { year--; month += 12; }
-        const c = 365.25 * year;
-        const e = 30.6 * month;
-        const jd = c + e + day - 694039.09;
-        const phase = jd / 29.53058867;
-        const cycle = Math.floor(phase); 
-        const age = (phase - cycle) * 29.53;
+    // Convert to Julian date
+    const time = now.getTime() / 86400000 + 2440587.5;
+    const T = (time - 2451545.0) / 36525;
 
-        let phaseText = "";
-        if (age < 1.84566) phaseText = "new moon 🌑";
-        else if (age < 5.53699) phaseText = "waxing crescent 🌒";
-        else if (age < 9.22831) phaseText = "first quarter 🌓";
-        else if (age < 12.91963) phaseText = "waxing gibbous 🌔";
-        else if (age < 16.61096) phaseText = "full moon 🌕";
-        else if (age < 20.30228) phaseText = "waning gibbous 🌖";
-        else if (age < 23.99361) phaseText = "last quarter 🌗";
-        else if (age < 27.68493) phaseText = "waning crescent 🌘";
-        else phaseText = "new moon 🌑";
+    // Sun ecliptic longitude
+    const L0 = (280.46646 + 36000.76983 * T) % 360;
+    const M = (357.52911 + 35999.05029 * T) % 360;
+    const lambdaSun = L0 + 1.914602 * Math.sin(M * Math.PI/180);
 
-        return `current moon: ${phaseText}`;
-    }
+    // Moon calculations
+    const L1 = (218.316 + 481267.8813 * T) % 360;
+    const M1 = (134.963 + 477198.8676 * T) % 360;
+    const D = (297.850 + 445267.1115 * T) % 360;
 
-    document.getElementById('moon-phase').innerText = getMoonPhase();
+    const lambdaMoon = L1 + 6.289 * Math.sin(M1 * Math.PI/180);
+    const phaseAngle = lambdaMoon - lambdaSun;
+
+    // % Illumination
+    const illumination = (1 - Math.cos(phaseAngle * Math.PI/180)) / 2;
+    const pct = Math.round(illumination * 100);
+
+    // Phase naming logic
+    let phaseName = "";
+
+    if (pct < 2) phaseName = "new moon 🌑";
+    else if (pct < 25) phaseName = "waxing crescent 🌒";
+    else if (pct < 50) phaseName = "first quarter 🌓";
+    else if (pct < 75) phaseName = "waxing gibbous 🌔";
+    else if (pct < 98) phaseName = "full moon 🌕";
+    else if (pct < 75) phaseName = "waning gibbous 🌖"; // safeguard
+    else if (pct < 50) phaseName = "last quarter 🌗";
+    else phaseName = "waning crescent 🌘";
+
+    return `current moon: ${phaseName} (${pct}% lit)`;
+}
+
+document.getElementById('moon-phase').innerText = getMoonPhase();
 </script>
 
 </body>
