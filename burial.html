@@ -6,19 +6,46 @@
 <title>places 2 see</title>
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="images/coin.png">
+<style>
+    #hover-warning {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        width: 100px;
+        z-index: 10000;
+        pointer-events: none;
+    }
+</style>
 </head>
 <body>
-      <a href="javascript:history.back()" class="back-btn">         <img src="images/back.png" alt="Back">       </a>
-    
+    <a id="back-btn" href="javascript:history.back()" style="position: fixed; top: 10px; left: 10px; z-index: 9999;">
+        <img src="images/back.png" alt="Back" width="50">
+    </a>
+
+    <img id="hover-warning" src="images/dont_go_back.png" alt="Don't go back">
+
     <div class="scene-wrapper">
-        <!-- Main Background -->
         <img src="images/dark_industrial.jpg" class="scene-bg" alt="dark industrial">
-
-        <a href="spooky_door.html" class="scene-item" style="top: 37%; left: 78%; width: 10%; height: 35%;">
-            
-        </a>
-
+        <a href="spooky_door.html" class="scene-item" style="top: 37%; left: 78%; width: 10%; height: 35%;"></a>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backBtn = document.getElementById('back-btn');
+            const warningImg = document.getElementById('hover-warning');
+            
+            const hasVisited = localStorage.getItem('hasVisitedSpookyDoor');
+
+            if (!hasVisited) {
+                backBtn.addEventListener('mouseenter', () => {
+                    warningImg.style.display = 'block';
+                });
+                backBtn.addEventListener('mouseleave', () => {
+                    warningImg.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
-</html>
+</html>r
