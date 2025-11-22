@@ -11,6 +11,8 @@
         <a href="javascript:history.back()" class="back-btn">
             <img src="images/back.png" alt="Back">
         </a>
+
+        <img id="hover-warning" src="images/dont_go_back.png" alt="Don't go back">
         
         <div class="scene-wrapper">
             <img src="images/its_dark.svg" class="scene-bg" alt="It's dark in space">
@@ -19,5 +21,23 @@
                 <img src="images/02coin.gif" alt="Spinning coin"> 
             </a>
         </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backBtn = document.getElementById('back-btn');
+            const warningImg = document.getElementById('hover-warning');
+            
+            const hasVisited = localStorage.getItem('hasVisitedCoin');
+
+            if (!hasVisited) {
+                backBtn.addEventListener('mouseenter', () => {
+                    warningImg.style.display = 'block';
+                });
+                backBtn.addEventListener('mouseleave', () => {
+                    warningImg.style.display = 'none';
+                });
+            }
+        });
+        </script>
     </body>
 </html>
